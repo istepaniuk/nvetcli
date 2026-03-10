@@ -13,5 +13,3 @@ WORKDIR /build
 RUN make release
 RUN make deb
 
-RUN cd /build/dist/ && apt install ./*.deb -y
-RUN nvmetcli
