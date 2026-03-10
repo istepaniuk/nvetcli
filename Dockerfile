@@ -5,11 +5,13 @@ RUN apt-get update -qq && apt-get install -qq \
     dh-python \
 	pip \
     git \
-    python3-setuptools \
-	&& rm -rf /var/lib/apt/lists/*
+    python3-setuptools
 
 COPY . /build
 WORKDIR /build
 
 RUN make release
 RUN make deb
+
+RUN cd /build/dist/ && apt install ./*.deb -y
+RUN nvmetcli
