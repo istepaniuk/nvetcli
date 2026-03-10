@@ -1,3 +1,22 @@
+WARNING
+=======
+This is a fork of the original nvmetcli project. The upstream project has not
+been updated in years and it depends on python2, which makes it very hard to
+install on Debian 13.
+
+I forked https://git.infradead.org/?p=users/hch/nvmetcli.git, which has also a
+mirror on Github: https://github.com/hreinecke/nvmetcli)
+
+Then I:
+ - Hacked the Debian control file to make it installable on Debian 13
+ - Added a Dockerfile to build the .deb a docker image
+ - Minor modifications to make it work on Python3 with Debian's configshell_fb
+ - Applied the remove_six.patch from SuSE by Matej Cepl to remove 'six' module
+
+In other words: I have no idea what I'm doing. Use this at your OWN RISK.
+
+The resulting .deb is on the releases page of this repository.
+
 nvmetcli
 ========
 This contains the NVMe target admin tool "nvmetcli".  It can either be
